@@ -1,0 +1,22 @@
+es:
+  messages:
+    confirm: '¿Está seguro?'
+
+  navigation:
+    back: 'Volver'
+    show: 'Ver'
+    edit: 'Editar'
+    destroy: 'Eliminar'
+
+  personas:
+    new:
+      title: 'Nueva persona'
+    edit:
+      title: 'Editar persona'
+    index:
+      title: 'Listado de personas'
+      new: 'Nueva persona'
+    create:
+      notice: 'Persona creada'
+    update:
+      notice: 'Persona actualizada'

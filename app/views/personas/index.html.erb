@@ -1,9 +1,9 @@
-<h1>Listado de personas</h1>
+<h1><%= t '.title' %></h1>
 
 <table>
   <thead>
     <tr>
-      <th>Nombre</th>
+      <th><%= Persona.model_name.human %></th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -12,8 +12,8 @@
     <% @personas.each do |persona| %>
       <tr>
         <td><%= link_to "#{persona.nombre} #{persona.apellido}", persona %></td>
-        <td><%= link_to 'Editar', edit_persona_path(persona) %></td>
-        <td><%= link_to 'Eliminar', persona, method: :delete, data: { confirm: '¿Está seguro?' } %></td>
+        <td><%= link_to t('navigation.edit'), edit_persona_path(persona) %></td>
+        <td><%= link_to t('navigation.destroy'), persona, method: :delete, data: { confirm: t('messages.confirm') } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -21,4 +21,4 @@
 
 <br>
 
-<%= link_to 'Nueva persona', new_persona_path %>
+<%= link_to t('.new'), new_persona_path %>

@@ -1,6 +1,6 @@
-<h1>Editar persona</h1>
+<h1><%= t 'personas.edit.title' %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Ver', @persona %> |
-<%= link_to 'Volver', personas_path %>
+<%= link_to t('navigation.show'), @persona %> |
+<%= link_to t('navigation.back'), personas_path %>

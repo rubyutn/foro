@@ -1,7 +1,7 @@
 <%= form_for(@persona) do |f| %>
   <% if @persona.errors.any? %>
     <div id="error_explanation">
-      <h2>No se guardó la persona, revise los errores:</h2>
+      <h2><%= t 'errors.template.header', model: Persona.model_name.human, count: @persona.errors.size %></h2>
 
       <ul>
       <% @persona.errors.full_messages.each do |msg| %>
@@ -24,6 +24,6 @@
     <%= f.text_field :correo %>
   </div>
   <div class="actions">
-    <%= f.submit 'Guardar' %>
+    <%= f.submit %>
   </div>
 <% end %>

@@ -5,9 +5,9 @@
 </h1>
 
 <p>
-  <strong>Correo:</strong>
+  <strong><%= Persona.human_attribute_name 'correo' %>:</strong>
   <%= mail_to @persona.correo %>
 </p>
 
-<%= link_to 'Editar', edit_persona_path(@persona) %> |
-<%= link_to 'Volver', personas_path %>
+<%= link_to t('navigation.edit'), edit_persona_path(@persona) %> |
+<%= link_to t('navigation.back'), personas_path %>
