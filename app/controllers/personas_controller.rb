@@ -4,7 +4,7 @@ class PersonasController < ApplicationController
   # GET /personas
   # GET /personas.json
   def index
-    @personas = Persona.order 'apellido'
+    @personas = Persona.buscar(params[:q]).order 'apellido'
   end
 
   # GET /personas/1

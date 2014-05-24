@@ -1,5 +1,12 @@
 <h1><%= t '.title' %></h1>
 
+<%= form_for :persona, url: personas_path, method: :get do |f| %>
+  <%= text_field_tag :q, params[:q] %>
+
+  <%= f.submit t('.search') %> <%= ver_todos %>
+<% end %>
+
+<%= render inline: '' %>
 <table>
   <thead>
     <tr>

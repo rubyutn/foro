@@ -16,6 +16,8 @@ es:
     index:
       title: 'Listado de personas'
       new: 'Nueva persona'
+      search: 'Buscar'
+      all: 'Ver todos'
     create:
       notice: 'Persona creada'
     update:
