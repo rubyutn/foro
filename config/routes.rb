@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
+  resource :sesion, only: [:new, :create, :destroy], controller: 'sesion'
+
   resources :personas
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'sesion#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

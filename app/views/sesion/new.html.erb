@@ -1,0 +1,17 @@
+<h1><%= t '.title' %></h1>
+
+<%= form_for :sesion, url: sesion_path do |f| %>
+  <div class="field">
+    <%= f.label :correo %><br />
+    <%= f.text_field :correo, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="actions">
+    <%= f.submit t('.submit') %>
+  </div>
+<% end %>
+
+<p id="notice"><%= flash[:alert] || flash[:notice] %></p>

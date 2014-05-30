@@ -1,4 +1,18 @@
 es:
+  activerecord:
+    models:
+      persona:
+        one: 'Persona'
+        other: 'Personas'
+
+    attributes:
+      persona:
+        nombre: 'Nombre'
+        apellido: 'Apellido'
+        correo: 'Correo'
+        password: 'Contraseña'
+        password_confirmation: 'Confirmación'
+
   messages:
     confirm: '¿Está seguro?'
 
@@ -7,6 +21,7 @@ es:
     show: 'Ver'
     edit: 'Editar'
     destroy: 'Eliminar'
+    exit: 'Salir'
 
   personas:
     new:
@@ -22,3 +37,14 @@ es:
       notice: 'Persona creada'
     update:
       notice: 'Persona actualizada'
+
+  sesion:
+    new:
+      title: 'Ingreso'
+      submit: 'Ingresar'
+    create:
+      notice: 'Bienvenido'
+      alert: 'Correo o clave incorrecto'
+    destroy:
+      notice: 'Has salido correctamente'
+    unauthenticated: 'Debe estar autenticado'

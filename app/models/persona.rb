@@ -1,4 +1,6 @@
 class Persona < ActiveRecord::Base
+  has_secure_password
+
   validates :nombre, :apellido, presence: true
 
   def self.buscar termino

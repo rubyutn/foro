@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140410185945) do
+ActiveRecord::Schema.define(version: 20140530201359) do
 
   create_table "personas", force: true do |t|
     t.string   "nombre"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20140410185945) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "correo"
+    t.string   "password_digest"
   end
 
 end

@@ -1,0 +1,9 @@
+<div class="menu">
+  <ul>
+    <li><%= link_to Persona.model_name.human, personas_path %></li>
+  </ul>
+
+  <div class="salir">
+    <%= link_to t('navigation.exit'), sesion_path, method: :delete %>
+  </div>
+</div>
