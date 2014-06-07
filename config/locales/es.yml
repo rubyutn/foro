@@ -1,11 +1,17 @@
 es:
   activerecord:
     models:
+      mensaje:
+        one: 'Mensaje'
+        other: 'Mensajes'
       persona:
         one: 'Persona'
         other: 'Personas'
 
     attributes:
+      mensaje:
+        cuerpo: 'Cuerpo'
+        persona: 'Persona'
       persona:
         nombre: 'Nombre'
         apellido: 'Apellido'
@@ -22,6 +28,19 @@ es:
     edit: 'Editar'
     destroy: 'Eliminar'
     exit: 'Salir'
+
+  mensajes:
+    new:
+      title: 'Nuevo mensaje'
+    edit:
+      title: 'Editar mensaje'
+    index:
+      title: 'Listado de mensajes'
+      new: 'Nuevo mensaje'
+    create:
+      notice: 'Mensaje creado'
+    update:
+      notice: 'Mensaje actualizado'
 
   personas:
     new:

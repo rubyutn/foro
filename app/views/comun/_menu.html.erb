@@ -1,6 +1,7 @@
 <div class="menu">
   <ul>
-    <li><%= link_to Persona.model_name.human, personas_path %></li>
+    <li><%= link_to Persona.model_name.human(count: 0), personas_path %></li>
+    <li><%= link_to Mensaje.model_name.human(count: 0), mensajes_path %></li>
   </ul>
 
   <div class="salir">

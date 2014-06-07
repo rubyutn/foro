@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :mensajes
+
   resource :sesion, only: [:new, :create, :destroy], controller: 'sesion'
 
   resources :personas
