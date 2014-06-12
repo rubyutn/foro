@@ -10,4 +10,7 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  def login
+    session[:persona_id] = personas(:anakin).id
+  end
 end

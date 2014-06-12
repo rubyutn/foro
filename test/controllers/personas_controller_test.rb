@@ -2,48 +2,54 @@ require 'test_helper'
 
 class PersonasControllerTest < ActionController::TestCase
   setup do
-    @persona = personas(:one)
+    @persona = personas :anakin
+
+    login
   end
 
-  test "should get index" do
+  test 'debería obtener index' do
     get :index
     assert_response :success
     assert_not_nil assigns(:personas)
   end
 
-  test "should get new" do
+  test 'debería obtener new' do
     get :new
     assert_response :success
   end
 
-  test "should create persona" do
+  test 'debería crear persona' do
     assert_difference('Persona.count') do
-      post :create, persona: { apellido: @persona.apellido, nombre: @persona.nombre }
+      post :create, persona: @persona.dup.attributes.merge(
+        password: '123', password_confirmation: '123'
+      )
     end
 
-    assert_redirected_to persona_path(assigns(:persona))
+    assert_redirected_to persona_url(assigns(:persona))
   end
 
-  test "should show persona" do
+  test 'debería mostrar persona' do
     get :show, id: @persona
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'debería obtener editar' do
     get :edit, id: @persona
     assert_response :success
   end
 
-  test "should update persona" do
-    patch :update, id: @persona, persona: { apellido: @persona.apellido, nombre: @persona.nombre }
-    assert_redirected_to persona_path(assigns(:persona))
+  test 'debería actualizar persona' do
+    patch :update, id: @persona, persona: {
+      nombre: 'Darth', apellido: 'Vader', correo: 'darth@vader.me'
+    }
+    assert_redirected_to persona_url(assigns(:persona))
   end
 
-  test "should destroy persona" do
+  test 'debería eliminar persona' do
     assert_difference('Persona.count', -1) do
       delete :destroy, id: @persona
     end
 
-    assert_redirected_to personas_path
+    assert_redirected_to personas_url
   end
 end

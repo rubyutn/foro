@@ -2,48 +2,52 @@ require 'test_helper'
 
 class MensajesControllerTest < ActionController::TestCase
   setup do
-    @mensaje = mensajes(:one)
+    @mensaje = mensajes :para_luke
+
+    login
   end
 
-  test "should get index" do
+  test 'deberia obtener index' do
     get :index
     assert_response :success
     assert_not_nil assigns(:mensajes)
   end
 
-  test "should get new" do
+  test 'deberia obtener new' do
     get :new
     assert_response :success
   end
 
-  test "should create mensaje" do
+  test 'debería crear mensaje' do
     assert_difference('Mensaje.count') do
       post :create, mensaje: { cuerpo: @mensaje.cuerpo, persona_id: @mensaje.persona_id }
     end
 
-    assert_redirected_to mensaje_path(assigns(:mensaje))
+    assert_redirected_to mensaje_url(assigns(:mensaje))
   end
 
-  test "should show mensaje" do
+  test 'deberia mostrar mensaje' do
     get :show, id: @mensaje
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'debería obtener edit' do
     get :edit, id: @mensaje
     assert_response :success
   end
 
-  test "should update mensaje" do
-    patch :update, id: @mensaje, mensaje: { cuerpo: @mensaje.cuerpo, persona_id: @mensaje.persona_id }
-    assert_redirected_to mensaje_path(assigns(:mensaje))
+  test 'deberia actualizar mensaje' do
+    patch :update, id: @mensaje, mensaje: {
+      cuerpo: 'Y Leia es tu hermana', persona_id: @mensaje.persona_id
+    }
+    assert_redirected_to mensaje_url(assigns(:mensaje))
   end
 
-  test "should destroy mensaje" do
+  test 'should destroy mensaje' do
     assert_difference('Mensaje.count', -1) do
       delete :destroy, id: @mensaje
     end
 
-    assert_redirected_to mensajes_path
+    assert_redirected_to mensajes_url
   end
 end

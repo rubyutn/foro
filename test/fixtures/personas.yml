@@ -1,9 +1,11 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+anakin:
+  nombre: 'Anakin'
+  apellido: 'Skywalker'
+  correo: 'anakin@skywalker.me'
+  password_digest: <%= BCrypt::Password.create '123', cost: BCrypt::Engine::MIN_COST %>
 
-one:
-  nombre: MyString
-  apellido: MyString
-
-two:
-  nombre: MyString
-  apellido: MyString
+luke:
+  nombre: 'Luke'
+  apellido: 'Skywalker'
+  correo: 'luke@skywalker.me'
+  password_digest: <%= BCrypt::Password.create '123', cost: BCrypt::Engine::MIN_COST %>
