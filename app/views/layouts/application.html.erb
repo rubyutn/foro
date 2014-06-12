@@ -8,7 +8,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render 'comun/menu' if persona_actual %>
-  <%= yield %>
+  <div class="container">
+    <%= render 'comun/mensajes' if mensaje %>
+    <%= render 'comun/menu' if persona_actual %>
+    <%= yield %>
+  </div>
 </body>
 </html>

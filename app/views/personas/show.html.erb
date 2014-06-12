@@ -1,11 +1,9 @@
-<p id="notice"><%= notice %></p>
-
 <h1>
+  <span class="glyphicon glyphicon-user"></span>
   <%= @persona.nombre %> <%= @persona.apellido %>
 </h1>
 
 <p>
-  <strong><%= Persona.human_attribute_name 'correo' %>:</strong>
   <%= mail_to @persona.correo %>
 </p>
 

@@ -1,5 +1,7 @@
-<h1><%= t 'mensajes.new.title' %></h1>
+<h2 class="text-muted"><%= t 'mensajes.new.title' %></h2>
 
 <%= render 'form' %>
 
-<%= link_to t('navigation.back'), mensajes_path %>
+<div class="pull-right">
+  <%= link_to t('navigation.back'), mensajes_path %>
+</div>

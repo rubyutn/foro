@@ -1,15 +1,12 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong><%= Mensaje.human_attribute_name 'cuerpo' %>:</strong>
-</p>
-
-<%= simple_format @mensaje.cuerpo %>
-
-<p>
-  <strong><%= Mensaje.human_attribute_name 'persona' %>:</strong>
+  <span class="glyphicon glyphicon-arrow-right"></span>
   <%= @mensaje.persona %>
 </p>
+
+<blockquote>
+  <%= simple_format @mensaje.cuerpo %>
+</blockquote>
+
 
 <%= link_to t('navigation.edit'), edit_mensaje_path(@mensaje) %> |
 <%= link_to t('navigation.back'), mensajes_path %>

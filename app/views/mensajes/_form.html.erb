@@ -1,24 +1,25 @@
 <%= form_for(@mensaje) do |f| %>
   <% if @mensaje.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= t 'errors.template.header', model: Mensaje.model_name.human, count: @mensaje.errors.size %></h2>
+    <div class="alert alert-danger">
+      <h4><%= t 'errors.template.header', model: Mensaje.model_name.human, count: @mensaje.errors.size %></h4>
 
       <ul>
-      <% @mensaje.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @mensaje.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :cuerpo %><br>
-    <%= f.text_area :cuerpo, autofocus: true %>
+  <div class="form-group">
+    <%= f.label :cuerpo %>
+    <%= f.text_area :cuerpo, autofocus: true, class: 'form-control', rows: '5' %>
   </div>
-  <div class="field">
-    <%= f.label :persona_id %><br>
+  <div class="form-group">
+    <%= f.label :persona_id %>
     <%= f.text_field(
       :persona,
+      class: 'form-control',
       data: {
         autocomplete_for: '#mensaje_persona_id',
         autocomplete_url: personas_path
@@ -27,6 +28,6 @@
     <%= f.hidden_field :persona_id %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

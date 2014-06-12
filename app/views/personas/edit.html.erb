@@ -1,6 +1,8 @@
-<h1><%= t 'personas.edit.title' %></h1>
+<h2 class="text-muted"><%= t 'personas.edit.title' %></h2>
 
 <%= render 'form' %>
 
-<%= link_to t('navigation.show'), @persona %> |
-<%= link_to t('navigation.back'), personas_path %>
+<div class="pull-right">
+  <%= link_to t('navigation.show'), @persona %> |
+  <%= link_to t('navigation.back'), personas_path %>
+</div>

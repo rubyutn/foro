@@ -1,17 +1,23 @@
-<h1><%= t '.title' %></h1>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <div class="page-header text-center">
+      <h2><%= t '.title' %></h2>
+    </div>
 
-<%= form_for :sesion, url: sesion_path do |f| %>
-  <div class="field">
-    <%= f.label :correo %><br />
-    <%= f.text_field :correo, autofocus: true %>
+    <div class="well">
+      <%= form_for :sesion, url: sesion_path do |f| %>
+        <div class="form-group">
+          <%= f.label :correo, Persona.human_attribute_name('correo') %>
+          <%= f.text_field :correo, autofocus: true, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :password, Persona.human_attribute_name('password') %>
+          <%= f.password_field :password, class: 'form-control' %>
+        </div>
+        <div class="actions">
+          <%= f.submit t('.submit'), class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </div>
-  <div class="actions">
-    <%= f.submit t('.submit') %>
-  </div>
-<% end %>
-
-<p id="notice"><%= flash[:alert] || flash[:notice] %></p>
+</div>
